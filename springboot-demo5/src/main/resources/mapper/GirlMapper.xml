@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ymy.mapper.GirlMapper">
+    <insert id="insertGirl" parameterType="com.ymy.entity.Girl">
+        insert into girl(name,age,addr,love) value(#{name},#{age},#{addr},#{love})
+    </insert>
+    <delete id="deleteGirl" parameterType="int">
+        delete from girl where id=#{id}
+    </delete>
+    <update id="updateGirl" parameterType="com.ymy.entity.Girl">
+        update girl set name=#{id},age=#{id},addr=#{addr},love=#{love} where id=#{id}
+    </update>
+    <select id="selectById" resultType="com.ymy.entity.Girl" parameterType="int">
+      select * from girl where id=#{id}
+    </select>
+    <select id="selectAll" resultType="com.ymy.entity.Girl">
+    select * from girl
+    </select>
+</mapper>
